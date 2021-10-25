@@ -1,7 +1,61 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useMutation } from "@apollo/client";
+import jwtDecode from "jwt-decode";
+import { FlipCameraAndroid } from "@material-ui/icons";
+
+import styles from "./Auth.module.css";
+import { CREATE_USER, GET_TOKEN } from "../Queries";
 
 const Auth = () => {
-  return <div></div>;
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLogin, setIsLogin] = useState(true);
+
+  const [getToken] = useMutation(GET_TOKEN);
+  const [createUser] = useMutation(CREATE_USER);
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      const decodedToken = jwtDecode(localStorage.getItem("token"));
+      if (decodedToken.exp * 1000 < Date.now()) {
+        localStorage.removeItem("token");
+      } else {
+        window.location.href("/employees");
+      }
+    }
+  }, []);
+
+  return (
+    <div className={styles.auth}>
+      <from>
+        <div className={styles.auth__input}>
+          <lable>Username: </lable>
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div className={styles.auth__input}>
+          <lable>Password: </lable>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <button type="submit">
+          {isLogin ? "Login with JWT" : "Create new user"}
+        </button>
+        <div>
+          <FlipCameraAndroid
+            className={styles.auth__toggle}
+            onClick={() => setIsLogin(!isLogin)}
+          />
+        </div>
+      </from>
+    </div>
+  );
 };
 
 export default Auth;
