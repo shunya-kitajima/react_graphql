@@ -55,7 +55,7 @@ const Auth = () => {
 
   return (
     <div className={styles.auth}>
-      <from onSubmit={authUser}>
+      <form onSubmit={authUser}>
         <div className={styles.auth__input}>
           <lable>Username: </lable>
           <input
@@ -81,7 +81,7 @@ const Auth = () => {
             onClick={() => setIsLogin(!isLogin)}
           />
         </div>
-      </from>
+      </form>
     </div>
   );
 };
