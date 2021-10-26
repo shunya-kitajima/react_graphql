@@ -14,6 +14,34 @@ const Auth = () => {
   const [getToken] = useMutation(GET_TOKEN);
   const [createUser] = useMutation(CREATE_USER);
 
+  const authUser = async (e) => {
+    e.preventDefault();
+    if (isLogin) {
+      try {
+        const result = await getToken({
+          variables: { username: username, password: password },
+        });
+        localStorage.setItem("token", result.data.tokenAuth.token);
+        result.data.tokenAuth.token && (window.location.href = "/employees");
+      } catch (err) {
+        alert(err.message);
+      }
+    } else {
+      try {
+        await createUser({
+          variables: { username: username, password: password },
+        });
+        const result = await getToken({
+          variables: { username: username, password: password },
+        });
+        localStorage.setItem("token", result.data.tokenAuth.token);
+        result.data.tokenAuth.token && (window.location.href = "/employees");
+      } catch (err) {
+        alert(err.message);
+      }
+    }
+  };
+
   useEffect(() => {
     if (localStorage.getItem("token")) {
       const decodedToken = jwtDecode(localStorage.getItem("token"));
