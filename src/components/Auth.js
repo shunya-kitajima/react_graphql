@@ -55,7 +55,7 @@ const Auth = () => {
 
   return (
     <div className={styles.auth}>
-      <from>
+      <from onSubmit={authUser}>
         <div className={styles.auth__input}>
           <lable>Username: </lable>
           <input
