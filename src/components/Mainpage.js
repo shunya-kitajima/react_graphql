@@ -5,8 +5,9 @@ import { Grid } from "@material-ui/core";
 import jwtDecode from "jwt-decode";
 
 import styles from "./MainPage.module.css";
-import { GET_EMPLOYEES, GET_DEPTS } from "../Queries";
+import { GET_EMPLOYEES, GET_DEPTS } from "../queries";
 import EmployeeList from "./EmployeeList";
+import EmployeeCreate from "./EmployeeCreate";
 
 const Mainpage = () => {
   const {
@@ -28,7 +29,7 @@ const Mainpage = () => {
         localStorage.removeItem("token");
       }
     } else {
-      window.location.href("/");
+      window.location.href = "/";
     }
   }, [errorEmployees, errorDepts]);
 
@@ -55,6 +56,7 @@ const Mainpage = () => {
           }}
         />
       </h1>
+      <EmployeeCreate dataDepts={dataDepts} />
       <Grid container>
         <Grid item xs={5}>
           <EmployeeList dataEmployees={dataEmployees} />
