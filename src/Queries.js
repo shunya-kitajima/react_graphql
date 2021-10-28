@@ -36,3 +36,16 @@ export const GET_EMPLOYEES = gql`
     }
   }
 `;
+
+export const GET_DEPTS = gql`
+  query {
+    allDepartments {
+      edges {
+        node {
+          id
+          name
+        }
+      }
+    }
+  }
+`;
