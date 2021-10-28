@@ -4,7 +4,7 @@ import jwtDecode from "jwt-decode";
 import { FlipCameraAndroid } from "@material-ui/icons";
 
 import styles from "./Auth.module.css";
-import { CREATE_USER, GET_TOKEN } from "../Queries";
+import { CREATE_USER, GET_TOKEN } from "../queries";
 
 const Auth = () => {
   const [username, setUsername] = useState("");
