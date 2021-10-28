@@ -43,7 +43,7 @@ export const GET_DEPTS = gql`
       edges {
         node {
           id
-          name
+          deptName
         }
       }
     }
