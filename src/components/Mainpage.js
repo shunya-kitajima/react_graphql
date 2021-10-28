@@ -6,6 +6,7 @@ import jwtDecode from "jwt-decode";
 
 import styles from "./MainPage.module.css";
 import { GET_EMPLOYEES, GET_DEPTS } from "../Queries";
+import EmployeeList from "./EmployeeList";
 
 const Mainpage = () => {
   const {
@@ -54,6 +55,17 @@ const Mainpage = () => {
           }}
         />
       </h1>
+      <Grid container>
+        <Grid item xs={5}>
+          <EmployeeList dataEmployees={dataEmployees} />
+        </Grid>
+        <Grid item xs={4}>
+          {" "}
+        </Grid>
+        <Grid item xs={3}>
+          {" "}
+        </Grid>
+      </Grid>
     </div>
   );
 };
