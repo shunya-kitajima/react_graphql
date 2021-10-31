@@ -69,10 +69,10 @@ export const CREATE_EMPLOYEE = gql`
 `;
 
 export const UPDATE_EMPLOYEE = gql`
-  mutation ($ID: ID!, $name: String!, $joinYear: Int!, $department: ID!) {
+  mutation ($id: ID!, $name: String!, $joinYear: Int!, $department: ID!) {
     updateEmployee(
       input: {
-        ID: $ID
+        id: $id
         name: $name
         joinYear: $joinYear
         department: $department
@@ -86,6 +86,16 @@ export const UPDATE_EMPLOYEE = gql`
           id
           deptName
         }
+      }
+    }
+  }
+`;
+
+export const DELETE_EMPLOYEE = gql`
+  mutation ($id: ID!) {
+    deleteEmployee(input: { id: $id }) {
+      employee {
+        id
       }
     }
   }
