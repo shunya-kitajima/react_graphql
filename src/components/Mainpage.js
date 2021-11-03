@@ -8,6 +8,7 @@ import styles from "./MainPage.module.css";
 import { GET_EMPLOYEES, GET_DEPTS } from "../queries";
 import EmployeeList from "./EmployeeList";
 import EmployeeCreate from "./EmployeeCreate";
+import EmployeeDetails from "./EmployeeDetails";
 
 const Mainpage = () => {
   const {
@@ -62,7 +63,7 @@ const Mainpage = () => {
           <EmployeeList dataEmployees={dataEmployees} />
         </Grid>
         <Grid item xs={4}>
-          {" "}
+          <EmployeeDetails />
         </Grid>
         <Grid item xs={3}>
           {" "}
