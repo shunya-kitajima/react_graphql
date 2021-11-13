@@ -9,6 +9,7 @@ import { GET_EMPLOYEES, GET_DEPTS } from "../queries";
 import EmployeeList from "./EmployeeList";
 import EmployeeCreate from "./EmployeeCreate";
 import EmployeeDetails from "./EmployeeDetails";
+import DeptList from "./DeptList";
 
 const Mainpage = () => {
   const {
@@ -66,7 +67,7 @@ const Mainpage = () => {
           <EmployeeDetails />
         </Grid>
         <Grid item xs={3}>
-          {" "}
+          <DeptList dataDepts={dataDepts} />
         </Grid>
       </Grid>
     </div>
