@@ -7,6 +7,7 @@ import { SEARCH_EMPLOYEE } from "../queries";
 
 const FilterByName = () => {
   const [searchByName, setSearchByName] = useState("");
+
   const [searchEmployee, { data: dataSearch, error: errorSearch }] =
     useLazyQuery(SEARCH_EMPLOYEE, {
       fetchPolicy: "network-only",
