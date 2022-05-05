@@ -70,6 +70,17 @@ const Mainpage = () => {
           <DeptList dataDepts={dataDepts} />
         </Grid>
       </Grid>
+      <Grid container>
+        <Grid item xs={2}>
+          {""}
+        </Grid>
+        <Grid item xs={3}>
+          {""}
+        </Grid>
+        <Grid item xs={7}>
+          {""}
+        </Grid>
+      </Grid>
     </div>
   );
 };
