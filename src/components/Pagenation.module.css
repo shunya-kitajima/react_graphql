@@ -1,0 +1,17 @@
+.pagenation__search {
+  margin-top: 10px;
+  color: dimgray;
+  cursor: pointer;
+}
+
+.pagenation__list {
+  height: 300px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.pagenation__item {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5px;
+}
