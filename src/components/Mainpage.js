@@ -10,6 +10,9 @@ import EmployeeList from "./EmployeeList";
 import EmployeeCreate from "./EmployeeCreate";
 import EmployeeDetails from "./EmployeeDetails";
 import DeptList from "./DeptList";
+import FilterByName from "./FilterByName";
+import FilterByAnd from "./FilterByAnd";
+import Pagenation from "./Pagenation";
 
 const Mainpage = () => {
   const {
@@ -72,13 +75,13 @@ const Mainpage = () => {
       </Grid>
       <Grid container>
         <Grid item xs={2}>
-          {""}
+          <FilterByName />
         </Grid>
         <Grid item xs={3}>
-          {""}
+          <FilterByAnd />
         </Grid>
         <Grid item xs={7}>
-          {""}
+          <Pagenation />
         </Grid>
       </Grid>
     </div>
