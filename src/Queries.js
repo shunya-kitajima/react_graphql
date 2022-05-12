@@ -225,7 +225,7 @@ export const PAGENATE_MORE_EMPLOYEE = gql`
       pageInfo {
         startCursor
         endCursor
-        hashNextPage
+        hasNextPage
       }
     }
   }
