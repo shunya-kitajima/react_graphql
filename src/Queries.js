@@ -214,7 +214,7 @@ export const PAGENATE_LAST_EMPLOYEE = gql`
 
 export const PAGENATE_MORE_EMPLOYEE = gql`
   query ($first: Int, $after: String) {
-    allDepartment(first: $first, after: $after) {
+    allDepartments(first: $first, after: $after) {
       edges {
         cursor
         node {
